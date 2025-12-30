@@ -9,5 +9,5 @@ Tool Stack:
 Features:
 - User friendly interface
 - Configurable LLM
-- Store past conversations
+- Store past conversations in the MongoDB
 - Local/Private Server to make this chat secure
