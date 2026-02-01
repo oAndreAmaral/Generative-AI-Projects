@@ -19,9 +19,9 @@
 This project allows users to **analyze a company and its stock** using a multi-agent approach:
 
 1. **research_agent** extracts information from the internet regarding a company using a pre-made tool.
-2. **summarize_agent** summarizes the information extracted by Agent 1.
+2. **summarize_agent** summarizes the information extracted by Agent research_agent.
 3. **analist_agent** fetches financial and stock data for the company using a pre-made tool.
-4. **trader_agent** combines Agent 2’s summary and Agent 3’s financial data to give a **buy, sell, or maintain recommendation**.
+4. **trader_agent** combines summarize_agent summary and analist_agent financial data to give a **buy, sell, or maintain recommendation**.
 
 All data retrieval is done via **custom tools**.
 
@@ -72,9 +72,9 @@ pip install -r requirements.txt
 
 ## Usage
 
-1. Configure **API keys or access** for Tool 1, Tool 2 and AI model API KEY (in this example Groq API key is being used) in the .env file as a copy of the env_template.txt.
+1. Configure **API keys or access** for tool internet_research_tool, tool stock_research_tool and AI model API KEY (in this example Groq API key is being used) in the .env file as a copy of the env_template.txt.
 
-2. In the main.py define the company name and stock name to be analysed
+2. In the main.py define the company name and stock name to be analysed in the query
 
 3. Run the system:
 
