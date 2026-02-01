@@ -29,7 +29,7 @@ All data retrieval is done via **custom tools** to provide context and external 
 
 ## Agents
 
-| Agent       | Role                                                                           |
+| Agent       | Task                                                                           |
 | ----------- | ------------------------------------------------------------------------------ |
 | **research_agent** | Extracts company info from the internet using the tool internet_research_tool                           |
 | **summarize_agent** | Summarizes the extracted company information                                   |
