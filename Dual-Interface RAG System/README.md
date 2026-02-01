@@ -45,7 +45,9 @@ venv_ai_rag\Scripts\activate
 4. **Install dependencies**  
 
 python.exe -m pip install --upgrade pip
+
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
 pip install -r requirements.txt
 
 5. **Create and update the .venv according to the env_template.txt**  
