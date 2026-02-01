@@ -8,12 +8,15 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_classic.chains import RetrievalQA
 
+from llms_access.EndpointLLM import EndpointLLM
+
 load_dotenv() # read the environmental variables
 
 working_directory = os.path.dirname(os.path.abspath((__file__))) # Get the working directory where is this python script
 
-embedding = HuggingFaceEmbeddings() # use the embedding default
+embedding = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
 
+# Models instanciation
 llm = ChatGroq(
     model="llama-3.1-8b-instant",
     temperature=0.0
@@ -53,7 +56,7 @@ def retrieval_vectordatabase_to_response(user_question):
     )
 
     # Create a retriever
-    retriever = vector_store.as_retriever()
+    retriever = vector_store.as_retriever(search_kwargs={"k": 2})
 
     # Prepare the Question and Awnser chain
     qa_chain = RetrievalQA.from_chain_type(
@@ -67,8 +70,13 @@ def retrieval_vectordatabase_to_response(user_question):
     response = qa_chain.invoke({"query":user_question})
     answer = response['result']
 
-    for source in response["source_documents"]:
-        file_path = source.metadata["source"]  # pega o caminho completo
-        source_name = os.path.basename(file_path)  # extrai só o nome do arquivo
+    source_names = []
 
-    return answer, source_name
+    for source in response["source_documents"]:
+        file_path = source.metadata["source"]
+        source_name = os.path.basename(file_path)
+        source_names.append(source_name)
+
+    unique_source_names = list(set(source_names))
+
+    return answer, unique_source_names

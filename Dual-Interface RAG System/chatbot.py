@@ -2,16 +2,16 @@ import os
 import streamlit as st
 
 # get the LLM RAG functions
-from rag_utility import ingestion_pdf_to_vectordatabase, retrieval_vectordatabase_to_response
+from rag_system import ingestion_pdf_to_vectordatabase, retrieval_vectordatabase_to_response
 
 # set the directory
 working_directory = os.path.dirname(os.path.abspath((__file__)))
 
 # STREAMLIT: set the title for the streamlit app
-st.title("Smart Article Reviewer")
+st.title("My Chatbot")
 
 # STREAMLIT: upload multiple pdf files
-uploaded_files = st.file_uploader("Upload a PDF Article file", type=["pdf"], accept_multiple_files=True)
+uploaded_files = st.file_uploader("Upload a PDF file", type=["pdf"], accept_multiple_files=True)
 
 if uploaded_files:
     for uploaded_file in uploaded_files:
@@ -27,6 +27,7 @@ if uploaded_files:
     st.info("Document Processed Successefully") # inform the user about the upload in the chatbot
 
 # STREAMLIT: get the user input
+
 user_question = st.text_area("What is your question about the document?")
 
 if st.button("Answer"):

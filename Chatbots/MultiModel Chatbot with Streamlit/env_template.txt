@@ -1,2 +1,0 @@
-GROQ_API_KEY="you_api_key"
-GEMINI_API_KEY="you_api_key"
