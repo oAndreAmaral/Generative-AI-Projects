@@ -8,8 +8,6 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_groq import ChatGroq
 from langchain_classic.chains import RetrievalQA
 
-from llms_access.EndpointLLM import EndpointLLM
-
 load_dotenv() # read the environmental variables
 
 working_directory = os.path.dirname(os.path.abspath((__file__))) # Get the working directory where is this python script
