@@ -31,9 +31,9 @@ All data retrieval is done via **custom tools**.
 
 | Agent       | Role                                                                           |
 | ----------- | ------------------------------------------------------------------------------ |
-| **research_agent** | Extracts company info from the internet using Tool 1                           |
+| **research_agent** | Extracts company info from the internet using the tool internet_research_tool                           |
 | **summarize_agent** | Summarizes the extracted company information                                   |
-| **analist_agent** | Retrieves financial and stock data using Tool 2                                |
+| **analist_agent** | Retrieves financial and stock data using the tool stock_research_tool                                |
 | **trader_agent** | Combines outputs from Agent 2 and Agent 3 and recommends Buy / Sell / Maintain |
 
 ---
@@ -51,8 +51,8 @@ All data retrieval is done via **custom tools**.
 
 ```bash
 # Clone the repository
-git clone https://github.com/oAndreAmaral/stock-analysis-4th-agent.git
-cd stock-analysis-4th-agent
+git clone https://github.com/oAndreAmaral/multi-agents-stock-analysis.git
+cd multi-agents-stock-analysis
 
 # Create virtual environment
 python -m venv venv
@@ -67,7 +67,6 @@ pip install -r requirements.txt
 
 * CrewAI
 * pandas, yfinance, numpy, requests
-* Any other libraries required for your custom tools
 
 ---
 
