@@ -82,4 +82,4 @@ pip install -r requirements.txt
 python main.py
 ```
 
-4. Agent 4 will output **Buy, Sell, or Maintain** based on the combined analysis as well as some explanations for its decision.
+4. trader_agent will output **Buy, Sell, or Maintain** based on the combined analysis as well as some explanations for its decision.
