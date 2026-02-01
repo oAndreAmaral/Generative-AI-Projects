@@ -23,7 +23,7 @@ This project allows users to **analyze a company and its stock** using a multi-a
 3. **analist_agent** fetches financial and stock data for the company using a pre-made tool.
 4. **trader_agent** combines summarize_agent summary and analist_agent financial data to give a **buy, sell, or maintain recommendation**.
 
-All data retrieval is done via **custom tools**.
+All data retrieval is done via **custom tools** to provide context and external information to the agents.
 
 ---
 
