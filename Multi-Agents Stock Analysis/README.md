@@ -18,10 +18,10 @@
 
 This project allows users to **analyze a company and its stock** using a multi-agent approach:
 
-1. **Agent 1** extracts information from the internet regarding a company using a pre-made tool.
-2. **Agent 2** summarizes the information extracted by Agent 1.
-3. **Agent 3** fetches financial and stock data for the company using a pre-made tool.
-4. **Agent 4** combines Agent 2’s summary and Agent 3’s financial data to give a **buy, sell, or maintain recommendation**.
+1. **research_agent** extracts information from the internet regarding a company using a pre-made tool.
+2. **summarize_agent** summarizes the information extracted by Agent 1.
+3. **analist_agent** fetches financial and stock data for the company using a pre-made tool.
+4. **trader_agent** combines Agent 2’s summary and Agent 3’s financial data to give a **buy, sell, or maintain recommendation**.
 
 All data retrieval is done via **custom tools**.
 
@@ -31,10 +31,10 @@ All data retrieval is done via **custom tools**.
 
 | Agent       | Role                                                                           |
 | ----------- | ------------------------------------------------------------------------------ |
-| **Agent 1** | Extracts company info from the internet using Tool 1                           |
-| **Agent 2** | Summarizes the extracted company information                                   |
-| **Agent 3** | Retrieves financial and stock data using Tool 2                                |
-| **Agent 4** | Combines outputs from Agent 2 and Agent 3 and recommends Buy / Sell / Maintain |
+| **research_agent** | Extracts company info from the internet using Tool 1                           |
+| **summarize_agent** | Summarizes the extracted company information                                   |
+| **analist_agent** | Retrieves financial and stock data using Tool 2                                |
+| **trader_agent** | Combines outputs from Agent 2 and Agent 3 and recommends Buy / Sell / Maintain |
 
 ---
 
@@ -42,8 +42,8 @@ All data retrieval is done via **custom tools**.
 
 | Tool       | Role                                                        |
 | ---------- | ----------------------------------------------------------- |
-| **Tool 1** | Custom web scraper or API for gathering company information |
-| **Tool 2** | Custom tool for financial and stock data retrieval          |
+| **internet_research_tool** | Custom web scraper or API for gathering company information |
+| **stock_research_tool** | Custom tool for financial and stock data retrieval          |
 
 ---
 
@@ -51,7 +51,7 @@ All data retrieval is done via **custom tools**.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/stock-analysis-4th-agent.git
+git clone https://github.com/oAndreAmaral/stock-analysis-4th-agent.git
 cd stock-analysis-4th-agent
 
 # Create virtual environment
